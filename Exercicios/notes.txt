@@ -1,0 +1,90 @@
+Criar janelas
+ <script>
+        window.alert('Minha primeira mensagem')
+        //Criar um aviso
+        window.confirm('Está a gostar de JS?')
+        //Criar a opção de ok ou cancel
+        window.prompt('Qual é o seu nome?')
+        //Criar a possibilidade para escrever
+        /*
+        Todas elas vão aparecer num balão antes de mostrar o site
+        */
+    </script>
+
+
+Variaveis e Tipos de Primitivos
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        window.alert('É um grande prazer conhece-lo, ' + nome + '!!')
+        //Comentário em JS (unica linha)
+        /*
+        Comentário em JS
+        (varias linhas)
+        */
+    </script>
+
+<script>
+        var n1 = Number(window.prompt('Escreva um número: '))
+        var n2 = Number(window.prompt('Escreva outro número: '))
+        /*
+        Number.parseInt(n) -> Converter string para numero inteiro
+        Number.parseInt(n) -> Converter string para numero decimal
+        Number(n) -> Converter string para numero
+        */
+       /*
+       String(n) -> Converter de numero para string
+       n.toString() -> Converter de numero para string
+       */
+        var soma = n1 + n2
+        window.alert(`A soma de ${n1} mais ${n2} é igual ${soma}`) 
+        /*
+        + concatenação (string + string)
+        + adição (number + number)
+        */
+    </script>
+
+
+
+Tratamento de dados
+	<script>
+        var nome = window.prompt('Qual é o seu nome?')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.<br>`)
+        // numero de letras
+        document.write(`O seu nome em maiúsculas fica assim ${nome.toUpperCase()} <br>`)
+        //meter em letra maiúscula
+        document.write(`O seu nome em minúsculas fica assim ${nome.toLowerCase()} <br>`)
+        //meter em letra minúsculas
+
+        /*>Alerar numero
+        var n1 = 1545.5
+        undefined
+        > n1
+        1545.5
+        > n1.toFixed(2)
+        '1545.50'
+        > n1.toFixed(2).replace('.',',')
+        '1545,50'
+        > n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+        'R$ 1.545,50'
+        > n1.toLocaleString('pt', {style: 'currency', currency: 'EUR'})
+'€ 1.545,50'
+*/
+    </script>
+
+
+
+Operadores
++ -> soma
+- -> subetração
+* -> multiplicação
+/ -> divisão
+% -> resto da divisão
+** -> elevado a
+
+Ordem de precedência
+()
+**
+* / %
++ -
+
+
