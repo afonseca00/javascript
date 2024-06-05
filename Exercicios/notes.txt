@@ -28,7 +28,7 @@ Variaveis e Tipos de Primitivos
         var n2 = Number(window.prompt('Escreva outro número: '))
         /*
         Number.parseInt(n) -> Converter string para numero inteiro
-        Number.parseInt(n) -> Converter string para numero decimal
+        Number.parseFloat(n) -> Converter string para numero decimal
         Number(n) -> Converter string para numero
         */
        /*
@@ -87,4 +87,107 @@ Ordem de precedência
 * / %
 + -
 
+Auto-atribuições
+var n = 3
+n = n + 4 <=> n += 4 
+n = n - 5 <=> n -= 5
+n = n * 4 <=> n *= 4
+n = n / 2 <=> n /= 2
+n = n ** 2 <=> n **= 2
+n = n % 5 <=> n %= 5
 
+Incremento
+var x = 5
+x = x + 1 <=> x++
+x = x - 1 <=> x--
+
+Relacionais
+> (maior)
+< (menor)
+>= (maoir ou igual)
+<= (menor ou maior)
+== (igual)
+!= (diferente)
+
+
+Identidade
+5 == 5 -> true (é o mesmo numero não vê o tipo) (igual)
+5 == '5' -> true (é o mesmo numero não vê o tipo) (igual)
+5 === '5' -> false (é o mesmo numero e o mesmo tipo) (identico)
+
+Desigual
+5 != '5' -> false (é numero diferente não vê o tipo) (diferente)
+5 !== '5' -> true (é numero diferente ou tipo diferente) (desigual restrito)
+
+
+Lógicos
+! -> negação
+&& -> conjução (e)
+|| -> disjunção (ou)
+
+Ordem
+1º operador aritmetico
+()
+**
+* / %
++ -
+2º operador relacional
+> 
+< 
+>= 
+<= 
+== 
+!= 
+3º operador logicos 
+!
+&&
+||
+
+Ternátio
+? 
+:
+(test) ? true : false
+
+
+
+Árvore DOM
+window
+	-> location (qual a localização do site)
+	-> document (documento atual)
+		-> html
+			-> head
+			-> body
+	-> history (de onde veio para onde vai)  
+
+
+
+podem ser selecionadas por:
+- Marca
+	- getElementsByTagName()
+		exemplo:
+			<script>
+        			var p1 = window.document.getElementsByTagName('p')[0]  //0 = 1 elemento
+       				 window.document.write(p1.innerText) //innerText = texto que esta la dentro
+    			</script>	
+- ID
+	- getElementById()
+		exemplo:
+			var d = window.document.getElementById('msg')
+        		d.style.background = 'green'
+        		d.innerText = 'Estou a espera ...'
+- Nome
+	- getElementsByName()
+		exemplo:
+			var d = window.document.getElementsByName('msg')[0]
+       			d.innerText = 'ola'
+- Classe
+	- getElementsByClassName()
+		exemplo:
+			var d = window.document.getElementsByClassName('msg')[0]
+       			d.innerText = 'ola'
+- Seletor
+	- querySelector()
+		exemplo:
+			var d = window.document.querySelector('div#msg') //# para id  . para class
+       			d.style.color = 'blue'
+	- querySelectorAll()
