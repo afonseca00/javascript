@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperaturas</h1>
+    <button onclick="botao()">Conerter</button>
+    <section id="saida">Clique no botão acima para iniciar</section>
+    <script>
+        function botao() {
+            var C = Number(window.prompt('Escreva uma temperatura em ºC (Celsius)'))
+            var K = C + 273.15
+            var F = (C * 1.8) + 32
+            saida = document.getElementById("saida")
+            saida.innerHTML = (`<h2>A Temperatura de ${C.toLocaleString('pt')}ºC, corresponde a...</h2>`)
+            saida.innerHTML += (`${K.toLocaleString('pt')}ºK (Kelvin)<br>`)
+            saida.innerHTML += (`${F.toLocaleString('pt')}ºF (Fahrenheit)`)
+        }
+    </script>
+</body>
+</html>
