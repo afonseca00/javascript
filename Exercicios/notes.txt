@@ -191,3 +191,94 @@ podem ser selecionadas por:
 			var d = window.document.querySelector('div#msg') //# para id  . para class
        			d.style.color = 'blue'
 	- querySelectorAll()
+
+
+
+Eventos DOM
+- mouseenter (quando o rato entra)
+- mousemove (entao estiver a mexer la dentro vai desparando o evento)
+- mousedown (no moemnto que é pressionado)
+- mouseup (no momento que é solto)
+- click (quando clicar e soltar)
+- mouseout (quando tirar o rato de la de dentro despara um evento)
+
+Exemplo:
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <script>
+        var area = document.getElementById('area')
+        function clicar() {
+            area.innerText = 'Carregou!'
+            area.style.background = 'red'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            area.innerText = 'Saiu!'
+            area.style.background = 'rgb(42, 139, 42)'
+        }
+    </script>
+</body>
+
+ou para deixar html mais limpo
+Exemplo:
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+    <script>
+        var area = document.getElementById('area')
+
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+
+        function clicar() {
+            area.innerText = 'Carregou!'
+            area.style.background = 'red'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            area.innerText = 'Saiu!'
+            area.style.background = 'rgb(42, 139, 42)'
+        }
+    </script>
+</body>
+
+
+
+Tipos de condições
+
+Condição simples 
+	function name(params) {
+            sim
+        } 
+
+Condição composto
+	function name(params) {
+            sim
+        } else {
+            nao
+        }
+
+Condições Multiplas
+	switch (key) {
+   	 case value1:
+        
+      	  break;
+	case value1:
+        
+      	  break;
+
+    	default:
+        	break;
+	}

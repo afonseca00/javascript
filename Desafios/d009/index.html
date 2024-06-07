@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+            padding: 20px;
+        }
+
+        section {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button onclick="botao()">Reajustar Salário</button>
+    <section id="res">Carregue no botão acima para iniciar.</section>
+    <script>
+        function botao() {
+            var func = window.prompt('Qual é o nome do funcionário?')
+            var salar = Number(window.prompt(`Qual é o salário de ${func}`))
+            var percen = Number(window.prompt(`O salário de ${func} vai ser reajustado em qual porcentagem?`))
+            var res = document.getElementById('res')
+            var per = percen / 100
+            var aumen = per * salar
+            var ganhar = salar + aumen
+            res.innerHTML = `<h2>${func} recebeu um aumento salarial!</h2>`
+            res.innerHTML += `<p>O salário atual era ${salar.toLocaleString('pt', {style: 'currency', currency: 'EUR'})}.</p>`
+            res.innerHTML += `<p>Com um aumento de ${percen}%, o sálario vai aumentar ${aumen.toLocaleString('pt', {style: 'currency', currency: 'EUR'})} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, Pedro Paulo vai passar a ganhar ${ganhar.toLocaleString('pt', {style: 'currency', currency: 'EUR'})}.</p>`
+        }
+    </script>
+</body>
+</html>
