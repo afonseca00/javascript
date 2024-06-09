@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórrmula de Bhaskara</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        section {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="botao()">Calcular</button>
+    <section id="res">Considerando uma equação no formato <strong><var>a<sup>2</sup></var> + <var>bx</var> + <var>c</var> = <var>0</var></strong>, aperte o botão acima para calcular o valor de &Delta;</section>
+    <script>
+        function botao() {
+            var a = Number(window.prompt('Qual é o valor de a?'))
+            var b = Number(window.prompt('Qual é o valor de b?'))
+            var c = Number(window.prompt('Qual é o valor de c?'))
+            var res = document.getElementById('res')
+            var delta = (b**2) - (4 * (a) * (c))
+            res.innerHTML = `<h2>Resolvendo Bhaskara</h2>`
+            res.innerHTML += `<p>A equação atual é <strong><var>${a}x<sup>2</sup></var> + <var>${b}x</var> + <var>${c}</var> = <var>0</var></strong></p>`
+            if (b < 0) {
+                res.innerHTML += `<p>O cálculo realizado <strong>&Delta; = <var>(${b})<sup>2</sup></var> - <var> 4</var> . <var>${a}</var> . <var>${c}</var></strong></p>`
+            } else {
+                res.innerHTML += `<p>O cálculo realizado <strong>&Delta; = <var>${b}<sup>2</sup></var> - <var> 4</var> . <var>${a}</var> . <var>${c}</var></strong></p>`
+            }
+            res.innerHTML += `O valor calculado foi <strong style=" background-color: yellow;">&Delta; = ${delta}</strong>`
+        }
+    </script>
+</body>
+</html>
