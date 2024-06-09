@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        section {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <button onclick="botao()">Verificar</button>
+    <section id="res">Informe um ano para se ele é bissexto</section>
+    <script>
+        function botao() {
+            var ant = Number(window.prompt('Qual era o preço anterior do produto?'))
+            var atu = Number(window.prompt('Qual é o preço atual do produto?'))
+            var res = document.getElementById('res')
+            res.innerHTML = `<h2>Analisando os valores informados</h2>`
+            if (ant < atu) {
+                res.innerHTML += `<p>O produto custava ${ant.toLocaleString('pt', {style: 'currency', currency: 'EUR'})} e agora custa ${atu.toLocaleString('pt', {style: 'currency', currency: 'EUR'})}.</p>`
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+                var dife1 = atu - ant
+                res.innerHTML += `<p>O preço subiu ${dife1.toLocaleString('pt', {style: 'currency', currency: 'EUR'})} em relação ao preço anterior.</p>`
+                var perc1 = ((atu - ant)/ant)*100
+                res.innerHTML += `<p>Uma variação de ${perc1.toLocaleString('pt')}% para cima.</p>`
+            } else {
+                res.innerHTML += `<p>O produto custava ${ant.toLocaleString('pt', {style: 'currency', currency: 'EUR'})} e agora custa ${atu.toLocaleString('pt', {style: 'currency', currency: 'EUR'})}.</p>`
+                res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+                var dife2 = ant - atu
+                res.innerHTML += `<p>O preço caiu ${dife2.toLocaleString('pt', {style: 'currency', currency: 'EUR'})} em relação ao preço anterior.</p>`
+                var perc2 = ((ant - atu)/atu)*100 
+                res.innerHTML += `<p>Uma variação de ${perc2.toLocaleString('pt')}% para baixo.</p>`
+            }
+        }
+    </script>
+</body>
+</html>
