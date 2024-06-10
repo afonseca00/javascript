@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        section {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="botao()">Entra com as notas</button>
+    <section id="res">Clique no botão acima para informar as notas do aluno.</section>
+    <script>
+        function botao() {
+            var nome = window.prompt('Qual é o nome do aluno?')
+            var n1 = Number(window.prompt(`Primeira nota de ${nome}`))
+            var n2 = Number(window.prompt(`Segunda nota de ${nome}`))
+            var res = document.getElementById('res')
+            var media = (n1 + n2) / 2
+            res.innerHTML = `<h1>Analisando a situação de ${nome}</h1>`
+            res.innerHTML += `<p>Com as notas ${n1.toLocaleString('pt')} e ${n2.toLocaleString('pt')} a <strong>média é ${media.toLocaleString('pt')}</strong></p>`
+            if (media > 6) {
+                res.innerHTML += `<p>Com média acima de 6,0 o aluno está <strong style="background-color: lightgreen; color: green;">APROVAOD</strong></p> `
+            } else if (media <= 6 && media > 3) {
+                res.innerHTML += `<p>Com média entre 3,0 e 6,0 o aluno está em <strong style="background-color: lightyellow; color: darkgoldenrod;">RECUPERAÇÃO</strong></p> `
+            } else {
+                res.innerHTML += `<p>Com média abaixo de 3,0 o aluno está <strong style="background-color: lightcoral; color: red;">REPROVAOD</strong></p> `
+            }
+        }
+    </script>
+</body>
+</html>
